@@ -8,9 +8,9 @@ my quote app:
       build:
         maven: 3
   frontend:
-    language:
-      javascript: ES21
-    framework:
-      react
+    template: thymeleaf
+    language:javascript
+    framework:null
+  style: tailwindcss
         
   
