@@ -1,0 +1,23 @@
+{
+  "name": "quote",
+  "version": "1.0.0",
+  "description": "my quote app:   backend:     api:       springboot:         version: 3       java:         version: 17       build:         maven: 3   frontend:     language:       javascript: ES21     framework:       react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahdimatin13/quote.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mahdimatin13/quote/issues"
+  },
+  "homepage": "https://github.com/mahdimatin13/quote#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
