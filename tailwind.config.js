@@ -4,8 +4,12 @@ module.exports = {
     "./src/main/resources/templates/**/*.html"
   ],
   theme: {
-    extend: {},
+  extend: {
+    fontFamily: {
+        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+    },
   },
-  plugins: [],
-}
+        plugins: [],
+    }
+};
 
