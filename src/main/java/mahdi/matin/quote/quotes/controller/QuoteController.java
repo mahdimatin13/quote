@@ -7,6 +7,8 @@ import mahdi.matin.quote.quotes.entity.QuoteEntity;
 import mahdi.matin.quote.quotes.service.QuoteService;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -16,7 +18,7 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 @AllArgsConstructor
-@RestController
+@Controller
 @RequestMapping("api/v1/quotes")
 public class QuoteController {
     private final QuoteService service;
@@ -54,13 +56,16 @@ public class QuoteController {
     }
 
     @GetMapping
-    public List<QuoteDto> getQuotes() {
+    public String getQuotes(Model model) {
+
         var quoteList = StreamSupport.stream(service.findAllQuotes().spliterator(), false)
                 .toList();
-        return quoteList
+        List<QuoteDto> quote =  quoteList
                 .stream()
                 .map(this::convertToDto)
                 .collect(Collectors.toList());
+        model.addAttribute("quotes", quote);
+        return "quotes";
 
     }
 }

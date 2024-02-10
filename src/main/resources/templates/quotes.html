@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Quotes</title>
+    <link rel="stylesheet" href="/static/output.css">
+</head>
+<body>
+
+<!-- Adjusted h1 tag with reduced surrounding div -->
+<div class="mt-6 ml-6 mr-6">
+    <h1 class="text-4xl font-bold text-left text-white bg-blue-500 p-4 mb-6">Quotes___</h1>
+
+    <!-- Use Thymeleaf to iterate over quotes and populate the rows -->
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div th:each="quote : ${quotes}" class="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 cursor-pointer">
+            <p class="text-xs font-medium text-gray-500 uppercase tracking-wider">ID: <span class="text-gray-900" th:text="${quote.id}"></span></p>
+            <p class="mt-4 text-lg text-gray-900" th:text="${quote.content}"></p>
+            <p class="mt-2 text-xs text-gray-500" th:text="${quote.addedAt}"></p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
